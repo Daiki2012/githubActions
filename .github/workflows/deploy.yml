@@ -24,7 +24,7 @@ jobs:
         user: rash
         password: ${{ secrets.ftp_password }}
         remoteFiles: "precache-manifest.*.js;logs/*.log"
-        workingDir: "/public_html"
+        workingDir: "/public_html/"
         ignoreSSL: "1"
 
         #- name: Sync files
