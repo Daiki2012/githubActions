@@ -20,7 +20,7 @@ jobs:
 
     - name: Moving build to artifacts directory
       run: |
-      sh ./scripts/cleanup.sh
+        sh ./scripts/cleanup.sh
 
     - name: Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
