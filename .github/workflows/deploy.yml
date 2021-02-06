@@ -18,6 +18,9 @@ jobs:
         npm install
         npm run build
 
+    - name: Moving build to artifacts directory
+      run: ./cleanup.sh
+
     - name: Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
