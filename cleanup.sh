@@ -1,6 +1,4 @@
 echo "start deleting unnecessary files for clean up"
-#shopt -s extglob
-#rm !(".htaccess"|".user.ini"|"config.php"|"create.php"|"updateOrderToBePaid.php"|"cleanup.sh")
-#rm -r static
+ssh -l rash -i xserver.key rash.xsrv.jp -p 10022 -t "cd rash.xsrv.jp/public_html ; rm precache-manifest* ; rm -r static"
 echo "end deleting unnecessary files for clean up"
 
