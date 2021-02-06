@@ -10,7 +10,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          アップロード <code>src/App.js</code> された
+          変更したけど、その前のファイルはどうなるの？
         </p>
         <a
           className="App-link"
