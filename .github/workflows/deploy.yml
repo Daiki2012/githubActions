@@ -13,10 +13,10 @@ jobs:
       with:
         node-version: '12'
       
-    - name: 🔨 Build Project
-      run: |
-        npm install
-        npm run build
+        #- name: 🔨 Build Project
+        #run: |
+        #npm install
+        #npm run build
 
     - name: Clean ReactJS precache-manifest and logs
       uses: StephanThierry/ftp-delete-action@releases/v1
@@ -25,7 +25,7 @@ jobs:
         user: rash
         password: ${{ secrets.ftp_password }}
         remoteFiles: "precache-manifest.*.js;logs/*.log"
-        workingDir: "rash.xsrv.jp/public_html/"
+        workingDir: "/public_html"
         ignoreSSL: "1"
 
     - name: Sync files
