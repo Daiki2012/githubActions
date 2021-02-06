@@ -18,8 +18,15 @@ jobs:
         npm install
         npm run build
 
-    - name: Moving build to artifacts directory
-      run: ./cleanup.sh
+    - name: Clean ReactJS precache-manifest and logs
+      uses: StephanThierry/ftp-delete-action@releases/v1
+      with:
+        host: rash.xsrv.jp
+        user: rash
+        password: ${{ secrets.ftp_password }}
+        remoteFiles: "precache-manifest.*.js;logs/*.log"
+        workingDir: "rash.xsrv.jp/public_html/"
+        ignoreSSL: "1"
 
     - name: Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
