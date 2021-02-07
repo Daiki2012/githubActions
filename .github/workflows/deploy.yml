@@ -26,8 +26,8 @@ jobs:
           cd rash.xsrv.jp/public_html/
           echo "after cd"
           ls -a
-          #rm recache-manifest*
-          #rm -r static
+          rm precache-manifest*
+          rm -r static
         host: sv3021.xserver.jp
         port: 10022
         user: rash
