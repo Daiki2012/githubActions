@@ -13,20 +13,20 @@ jobs:
       with:
         node-version: '12'
 
-      #- name: Build Project
-      #run: |
-      #  npm install
-      #  npm run build
+    - name: Build Project
+      run: |
+        npm install
+        npm run build
 
     - name: ssh and delete unnecessary files remotely
       run: |
         sh ./scripts/cleanup.sh
 
-        #- name: Sync files
-        #uses: SamKirkland/FTP-Deploy-Action@4.0.0
-        #with:
-        #server: rash.xsrv.jp
-        #username: rash 
-        #password: ${{ secrets.ftp_password }}
-        #server-dir: rash.xsrv.jp/public_html/
-        #local-dir: ./build/
+    - name: Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.0.0
+        with:
+        server: rash.xsrv.jp
+        username: rash 
+        password: ${{ secrets.ftp_password }}
+        server-dir: rash.xsrv.jp/public_html/
+        local-dir: ./build/
