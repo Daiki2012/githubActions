@@ -13,19 +13,18 @@ jobs:
       with:
         node-version: '12'
 
-        #- name: Build Project
-        #run: |
-        #npm install
-        #npm run build
+    - name: Build Project
+      run: |
+        npm install
+        npm run build
 
-        #- name: ssh and delete unnecessary files remotely
-        #run: ./cleanup.sh
     - name: ls -a via ssh
       uses: fifsky/ssh-action@master
       with:
         command: |
           cd /rash.xsrv.jp/public_html
-          ls -a
+          rm recache-manifest*
+          rm -r static
         host: sv3021.xserver.jp
         port: 10022
         user: rash
