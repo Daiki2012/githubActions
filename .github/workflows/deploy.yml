@@ -20,7 +20,7 @@ jobs:
 
     - name: ssh and delete unnecessary files remotely
       run: |
-        sh ./scripts/cleanup.sh
+        sh cleanup.sh
 
     - name: Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
