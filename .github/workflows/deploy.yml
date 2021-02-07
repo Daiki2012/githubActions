@@ -20,11 +20,15 @@ jobs:
 
         #- name: ssh and delete unnecessary files remotely
         #run: ./cleanup.sh
-    - uses: webfactory/ssh-agent@v0.4.1
+    - name: ls -a via ssh
+      uses: fifsky/ssh-action@master
       with:
-        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-    - name: ssh key generate
-      run: ssh rash@sv3021.xserver.jp -p 10022 -i "cd rash.xsrv.jp/public_html ; rm precache-manifest* ; rm -r static"
+        command: |
+          cd /tmp
+          ls -a
+        host: rash.xsrv.jp
+        user: rash
+        key: ${{ secrets.PRIVATE_KEY}}
 
     - name: Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
