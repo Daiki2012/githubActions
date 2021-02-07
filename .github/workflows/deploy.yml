@@ -25,7 +25,7 @@ jobs:
         ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
     - name: ssh key generate
       run: | 
-        ssh rash@sv3021.xserver.jp -p 10022 -i $ssh-private-key "cd rash.xsrv.jp/public_html ; rm precache-manifest* ; rm -r static"
+        ssh rash@sv3021.xserver.jp -p 10022 -i "cd rash.xsrv.jp/public_html ; rm precache-manifest* ; rm -r static"
 
     - name: Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
