@@ -23,8 +23,10 @@ jobs:
       with:
         command: |
           ls -a
-          cd rash.xsrv.jp/public_html
-          rm recache-manifest*
+          cd rash.xsrv.jp/public_html/
+          echo "after cd"
+          ls -a
+          #rm recache-manifest*
           #rm -r static
         host: sv3021.xserver.jp
         port: 10022
