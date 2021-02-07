@@ -26,9 +26,9 @@ jobs:
         command: |
           cd /tmp
           ls -a
-        host: rash.xsrv.jp
+        host: sv3021.xserver.jp
         user: rash
-        key: ${{ secrets.PRIVATE_KEY}}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
 
     - name: Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
