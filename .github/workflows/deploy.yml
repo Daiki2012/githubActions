@@ -18,7 +18,7 @@ jobs:
         npm install
         npm run build
 
-    - name: Moving build to artifacts directory
+    - name: ssh and delete unnecessary files remotely
       run: |
         sh ./scripts/cleanup.sh
 
