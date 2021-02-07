@@ -23,9 +23,9 @@ jobs:
     - name: ssh key generate
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-        run: | 
-          echo "$SSH_PRIVATE_KEY" > xkey && chmod 600 xkey
-          ssh rash@sv3021.xserver.jp -p 10022 -i xkey "cd rash.xsrv.jp/public_html ; rm precache-manifest* ; rm -r static"
+      run: | 
+        echo "$SSH_PRIVATE_KEY" > xkey && chmod 600 xkey
+        ssh rash@sv3021.xserver.jp -p 10022 -i xkey "cd rash.xsrv.jp/public_html ; rm precache-manifest* ; rm -r static"
 
     - name: Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
