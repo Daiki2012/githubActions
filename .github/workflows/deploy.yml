@@ -18,19 +18,8 @@ jobs:
         npm install
         npm run build
 
-        #- name: ssh and delete unnecessary files remotely
-        #run: |
-        #sh cleanup.sh
-    - name: executing remote ssh commands using password
-      uses: appleboy/ssh-action@master
-      with:
-        host: sv3021.xserver.jp
-        username: rash
-        password: ${{ secrets.ftp_password }}
-        port: 10022
-        script: |
-          cd rash.xsrv.jp/public_html
-          rm -r static
+    - name: ssh and delete unnecessary files remotely
+      run: ./cleanup.sh
 
     - name: Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
