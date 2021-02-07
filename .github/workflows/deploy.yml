@@ -24,7 +24,7 @@ jobs:
       uses: fifsky/ssh-action@master
       with:
         command: |
-          cd /tmp
+          cd /rash.xsrv.jp/public_html
           ls -a
         host: sv3021.xserver.jp
         port: 10022
