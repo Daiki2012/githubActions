@@ -27,6 +27,7 @@ jobs:
           cd /tmp
           ls -a
         host: sv3021.xserver.jp
+        port: 10022
         user: rash
         key: ${{ secrets.SSH_PRIVATE_KEY }}
 
