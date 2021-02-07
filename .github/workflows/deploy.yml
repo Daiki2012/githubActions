@@ -20,8 +20,8 @@ jobs:
 
         #- name: ssh and delete unnecessary files remotely
         #run: ./cleanup.sh
-    - name: ssh key generate
-      uses: webfactory/ssh-agent@v0.4.1
+        #- name: ssh key generate
+    - uses: webfactory/ssh-agent@v0.4.1
       with:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
       run: | 
