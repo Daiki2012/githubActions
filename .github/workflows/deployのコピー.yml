@@ -18,19 +18,12 @@ jobs:
         npm install
         npm run build
 
-        #- name: ssh and delete unnecessary files remotely
-        #run: ./cleanup.sh
-    - name: ssh key generate
-      run: echo "$SSH_PRIVATE_KEY" > key && chmod 600 key
-      env:
-        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-
-    - name: move directory test
-      run:  ssh rash@sv3021.xserver.jp -p 10022 -i key "cd rash.xsrv.jp/public_html ; rm precache-manifest* ; rm -r static"
+    - name: ssh and delete unnecessary files remotely
+      run: ./cleanup.sh
 
     - name: Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
-      with: 
+      with:
         server: rash.xsrv.jp
         username: rash 
         password: ${{ secrets.ftp_password }}
