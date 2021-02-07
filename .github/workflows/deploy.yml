@@ -22,10 +22,10 @@ jobs:
         #run: ./cleanup.sh
     - uses: webfactory/ssh-agent@v0.4.1
       with:
-        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
     - name: ssh key generate
       run: | 
-        ssh rash@sv3021.xserver.jp -p 10022 -i $SSH_PRIVATE_KEY "cd rash.xsrv.jp/public_html ; rm precache-manifest* ; rm -r static"
+        ssh rash@sv3021.xserver.jp -p 10022 -i $ssh-private-key "cd rash.xsrv.jp/public_html ; rm precache-manifest* ; rm -r static"
 
     - name: Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
