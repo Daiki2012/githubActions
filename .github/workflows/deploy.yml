@@ -13,10 +13,10 @@ jobs:
       with:
         node-version: '12'
 
-    - name: Build Project
-      run: |
-        npm install
-        npm run build
+        #- name: Build Project
+        #run: |
+        #npm install
+        #npm run build
 
         #- name: ssh and delete unnecessary files remotely
         #run: ./cleanup.sh
@@ -26,7 +26,8 @@ jobs:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
 
     - name: move directory test
-      run:  ssh rash@sv3021.xserver.jp -p 10022 -i key "cd rash.xsrv.jp/public_html ; rm precache-manifest* ; rm -r static"
+      run:  echo key
+      #run:  ssh rash@sv3021.xserver.jp -p 10022 -i key "cd rash.xsrv.jp/public_html ; rm precache-manifest* ; rm -r static"
 
     - name: Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
