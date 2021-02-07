@@ -26,7 +26,7 @@ jobs:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
 
     - name: move directory test
-      run:  echo "key"
+      run:  echo key
       #run:  ssh rash@sv3021.xserver.jp -p 10022 -i key "cd rash.xsrv.jp/public_html ; rm precache-manifest* ; rm -r static"
 
     - name: Sync files
