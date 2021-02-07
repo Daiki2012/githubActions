@@ -21,11 +21,11 @@ jobs:
         #- name: ssh and delete unnecessary files remotely
         #run: ./cleanup.sh
     - name: ssh key generate
-      env:
+      uses: webfactory/ssh-agent@v0.4.1
+      with:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
       run: | 
-        echo "$SSH_PRIVATE_KEY" > xkey && chmod 600 xkey
-        ssh rash@sv3021.xserver.jp -p 10022 -i xkey "cd rash.xsrv.jp/public_html ; rm precache-manifest* ; rm -r static"
+        ssh rash@sv3021.xserver.jp -p 10022 -i $SSH_PRIVATE_KEY "cd rash.xsrv.jp/public_html ; rm precache-manifest* ; rm -r static"
 
     - name: Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
