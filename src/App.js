@@ -10,7 +10,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-         6 変更したけど、その前のファイルはどうなるの. cleanup
+         7 変更したけど、その前のファイルはどうなるの. cleanup
         </p>
         <a
           className="App-link"
