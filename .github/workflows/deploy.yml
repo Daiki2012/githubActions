@@ -22,9 +22,9 @@ jobs:
       uses: fifsky/ssh-action@master
       with:
         command: |
-          #ls -a
+          ls -a
           cd rash.xsrv.jp/public_html/
-          echo "after cd"
+          ls -a
           rm precache-manifest*
           rm -r static
         host: sv3021.xserver.jp
