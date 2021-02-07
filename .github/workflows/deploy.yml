@@ -30,5 +30,3 @@ jobs:
         password: ${{ secrets.ftp_password }}
         server-dir: rash.xsrv.jp/public_html/
         local-dir: ./build/
-
-
