@@ -13,9 +13,7 @@ jobs:
       #with:
       #  node-version: '12'
       #- name: Build project
-      run: |
-        npm install
-        npm run build
+    - run: npm install && npm run build
         #- name: remove files via ssh
         #uses: fifsky/ssh-action@master
         #with:
