@@ -10,7 +10,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-         9 変更したけど、その前のファイルはどうなるの. cleanup
+         10 static folder found
         </p>
         <a
           className="App-link"
