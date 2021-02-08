@@ -10,11 +10,9 @@ jobs:
 
     - name: Build
       uses: actions/setup-node@v1
-      #with:
-      #  node-version: '12'
-      #- name: Build project
     - run: npm install && npm run build
-    - name: remove files via ssh
+
+    - name: Remove files via ssh
       uses: fifsky/ssh-action@master
       with:
         command: |
@@ -29,11 +27,11 @@ jobs:
         user: rash
         key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-        #    - name: Sync files
-        #      uses: SamKirkland/FTP-Deploy-Action@4.0.0
-        #      with: 
-        #        server: rash.xsrv.jp
-        #        username: rash 
-        #        password: ${{ secrets.ftp_password }}
-        #        server-dir: rash.xsrv.jp/public_html/
-        #        local-dir: ./build/
+    - name: Upload files
+      uses: SamKirkland/FTP-Deploy-Action@4.0.0
+      with: 
+        server: rash.xsrv.jp
+        username: rash 
+        password: ${{ secrets.ftp_password }}
+        server-dir: rash.xsrv.jp/public_html/
+        local-dir: ./build/
