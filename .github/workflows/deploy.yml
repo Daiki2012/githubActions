@@ -32,12 +32,11 @@ jobs:
         #user: rash
         #key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-
-    - name: Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.0.0
-      with: 
-        server: rash.xsrv.jp
-        username: rash 
-        password: ${{ secrets.ftp_password }}
-        server-dir: rash.xsrv.jp/public_html/
-        local-dir: ./build/
+        #    - name: Sync files
+        #      uses: SamKirkland/FTP-Deploy-Action@4.0.0
+        #      with: 
+        #        server: rash.xsrv.jp
+        #        username: rash 
+        #        password: ${{ secrets.ftp_password }}
+        #        server-dir: rash.xsrv.jp/public_html/
+        #        local-dir: ./build/
