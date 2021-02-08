@@ -10,7 +10,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-         11 static folder found....
+         12 static folder found final
         </p>
         <a
           className="App-link"
