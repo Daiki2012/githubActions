@@ -19,9 +19,8 @@ jobs:
           ls -a
           cd rash.xsrv.jp/public_html/
           ls -a
-          touch test.file
           rm precache-manifest* || true
-          rm -r static || true
+          #rm -r static || true
         host: sv3021.xserver.jp
         port: 10022
         user: rash
