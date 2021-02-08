@@ -16,7 +16,7 @@ jobs:
     - run: npm install && npm run build
     - name: remove files via ssh
       uses: fifsky/ssh-action@master
-        with:
+      with:
         command: |
           ls -a
           cd rash.xsrv.jp/public_html/
