@@ -65,7 +65,7 @@ jobs:
 ```
 
 
-## setup cleanup.sh
+## execute unix commands
 
 You can execute unix commands via shell script or using the below ssh-action@master project. After the login, it is executed
 
@@ -73,23 +73,17 @@ You can execute unix commands via shell script or using the below ssh-action@mas
 
    ```yaml
 	  - name: Remove files via ssh
-       uses: fifsky/ssh-action@master
-       with:
-         command: |
-           ls -a
-           cd xxxx.xsrv.jp/public_html/
-            ls -a
-            rm precache-manifest* || true
-            rm -r static || true
-            host: {{ secrets.ftp_server }}
-            port: 10022
-            user: {{ secrets.ftp_username }}
-            key: ${{ secrets.ssh_private_key }}
-   ```
-
-2. :
-
-   ```shell
-		ssh -l xxxx -i xxxx.key xxxx.xsrv.jp -p 10022 -t "cd xxxx.xsrv.jp/public_html ; rm precache-manifest* ; rm -r static"
+      uses: fifsky/ssh-action@master
+      with:
+      	command: |
+        	ls -a
+          cd xxxx.xsrv.jp/public_html/
+          ls -a
+          rm precache-manifest* || true
+          rm -r static || true
+          host: {{ secrets.ftp_server }}
+          port: 10022
+          user: {{ secrets.ftp_username }}
+          key: ${{ secrets.ssh_private_key }}
    ```
 
