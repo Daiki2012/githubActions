@@ -11,9 +11,6 @@ actions support similar CI/CD functions.
 * The shell script clean up the unnecessary files.
 * Upload the latest raect project files to the public_html folder.
 
-<p align="center">
-  <img src="./img/example.png" alt="Size Limit CLI" width="738">
-</p>
 
 With **[GitHub Actions]** the above tasks are executed automatically, so no manual process
 is required.
