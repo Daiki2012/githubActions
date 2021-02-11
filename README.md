@@ -72,8 +72,8 @@ You can execute unix commands via below yaml example. if you try to remove a fil
 ```yaml
 - name: Remove files via ssh
   uses: fifsky/ssh-action@master
-  with:
-		command: |
+  with:
+    command: |
     	ls -a
       cd xxxx.xsrv.jp/public_html/
       ls -a
